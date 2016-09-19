@@ -1,0 +1,33 @@
+//Rewrite main sass file
+.header{
+	.phone-active{
+		a.close{
+			@media (max-width: 600px){
+				margin-top: 19px;
+			}
+		}
+	}
+}
+#main{
+	padding: 45px 0;
+	&.home{
+		padding: 0;
+	}
+	.ctitle{
+		h1{
+			font-size: 22px;
+			@media (min-width: 768px){
+				font-size: 48px;
+			}
+		}
+	}
+}
+#footer{
+	padding-top: 25px;
+}
+.bottom-shop-home{
+	p{
+		font-weight: bold;
+		color: #ffffff;
+	}
+}

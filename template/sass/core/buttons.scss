@@ -1,0 +1,35 @@
+//Custom buttons
+.btn{
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	&.btn-default{
+		&.btn-home-shop{
+			background-color: #ffffff;
+			border-color: #333333;
+			color: #333333;
+			&.addProd{
+				margin-right: -3px;
+			    border-bottom-right-radius: 0;
+			    border-top-right-radius: 0;
+			    border-right: 0;
+			}
+			&.addWlist{
+				border-bottom-left-radius: 0;
+			    border-top-left-radius: 0;
+			}
+			span.fa{
+				font-size: 20px;
+			}
+			&:hover,
+			&:focus,
+			&:active{
+				background-color: #333333;
+				border-color: #333333;
+				color: #ffffff;
+			}
+		}	
+	}
+}
