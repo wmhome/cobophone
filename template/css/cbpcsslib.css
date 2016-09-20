@@ -13884,4 +13884,8 @@ section.galeria div img {
   float: none;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 /*# sourceMappingURL=cbpcsslib.css.map */
