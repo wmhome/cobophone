@@ -5,23 +5,38 @@ ob_start();
 
 
 $link=conecta();
-$id_marca=$_POST['id'];
+$id_modelo=$_GET['id'];
 ?>
-<div class="container contenidor-2" style="display:none;">
+<div class="container contenidor-2">
 	<div class="row">
 		<?php
-		$sql_0="select nombre from marcas where id_marca='$id_marca'";
-		$res_0=busqueda($sql_0, $link);
-		$row_0=recibir_array($res_0);
-		$marca=utf8_encode($row_0[0]);
-		$sql_mod="select nombre from modelos where id_marca='$id_marca'";
+		$sql_mod="select * from modelos where id_modelo='$id_modelo'";
 		$res_mod=busqueda($sql_mod, $link);
 		$row_mod=recibir_array($res_mod);
+		$id_marca=$row_mod['id_marca'];
 		$nombre_modelo=utf8_encode($row_mod['nombre']);
+		$id_file=$row_mod['id_file'];
+		$sql_file="select * from files where id='$id_file'";
+		$res_file=busqueda($sql_file, $link);
+		$row_file=recibir_array($res_file);
+		$url=$row_file['url'];
+		$name_file=$row_file['name'];
+		$image=$url.$name_file;
 		?>
 		<article class="content col-sm-12">
 			<h3 class="text-center"><?=$nombre_modelo?></h3>
-			<table class="table table-hover table-striped">
+			<div class="row">
+			<div class="col-sm-6">
+				<img src="<?=$image?>" class="img-responsive centered">
+			</div>
+			<div class="col-sm-6">
+				<p>En Cobophone te reparamos, arreglamos o actualizamos el <?=$nombre_modelo?>.</p>
+				<p>Puedes traerlo en persona a nuestro establecimiento y dependiendo de la avería, lo reparamos en el momento.</p>
+				<p>Si no estas en Madrid o no tienes tiempo para pasarte por nuestra tienda nuestra empresa de transporte te lo recoge nosotros te lo reparamos en nuestras instalaciones y te lo enviamos allí donde nos digas para que no tengas que preocuparte de nada, nosotros lo hacemos por ti.</p>
+				<p>Ademas puedes ver el precio de tu reparacion en la lista pero recuerda que es orientativo ya que puede tener componentes dañados que solo se ven una vez abierto.</p>
+			</div>
+			</div>
+			<table class="table table-hover table-striped" style="margin-top: 25px;">
 			<thead>
 				<tr>
 					<th class="text-left">Tabla de precios de las distintas reparaciones que ofrecemos para el <?=$nombre_modelo?></th>
@@ -52,32 +67,3 @@ $id_marca=$_POST['id'];
 		</article>
 	</div>
 </div>
-<script>
-$(document).ready(function(){
-	$('.contenidor-2').animate({width: 'toggle'});
-	$('.btn-return').on('click', function(){
-		$('.contenidor-2').fadeToggle('slow', 'linear');
-		$.ajax({
-			url: 'layout/modelos.php',
-			data: {id : 0},
-			type: 'POST',
-			success : function(data) {
-				$('.wrapper-1').html(data);
-		    },
-		});
-	});
-	$('.enlace-2').on('click', function(){
-		id_marca=$(this).attr('data-modelo');
-		//alert(id_marca);
-		$('.contenidor-1').animate({width: 'toggle'});
-		$.ajax({
-			url: 'layout/reparaciones.php',
-			data: {id : id_modelo},
-			type: 'POST',
-			success : function(data) {
-				$('.wrapper-1').html(data);
-		    },
-		});
-	});
-});
-</script>

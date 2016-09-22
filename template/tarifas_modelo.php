@@ -5,8 +5,7 @@ ob_start();
 
 
 $link=conecta();
-
-
+$nombre_marca=$_GET['marca'];
 ?>
 <!doctype html>
 <html>
@@ -68,8 +67,9 @@ $link=conecta();
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.html">Home</a> </li>
-      <li class="active">Tarifas reparaciones</li>
+      <li><a href="index.php">Home</a> </li>
+      <li><a href="tarifas.php">Tarifas reparaciones</a></li>
+      <li class="active"><?=$nombre_marca?></li>
     </ul>	
   </div>
 </div><!-- .breadcrumb-box -->
@@ -77,11 +77,11 @@ $link=conecta();
 <section id="main">
   <header class="page-header">
     <div class="container">
-      <h1 class="title">Tarifas</h1>
+      <h1 class="title">Tarifas reparación <?=$nombre_marca?></h1>
     </div>	
   </header>
   <div class="wrapper-1">
-  <?php include("layout/marcas.php"); ?>
+  <?php include("layout/modelos.php"); ?>
   </div>
   <div class="wrapper-2">
   	<div class="row">

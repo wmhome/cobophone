@@ -5,9 +5,9 @@ ob_start();
 
 
 $link=conecta();
-$id_marca=$_POST['id'];
+$id_marca=$_GET['id'];
 ?>
-<div class="container contenidor-2" style="display:none;">
+<div class="container contenidor-2">
 	<div class="row">
 		<?php
 		$sql_0="select nombre from marcas where id_marca='$id_marca'";
@@ -30,7 +30,7 @@ $id_marca=$_POST['id'];
 					<div class="<?=$cols?>">
 						<div class="list-group">
 							<a href="#" class="list-group-item active">
-								<h4 class="list-group-item-heading cursor-default"><?=$tipo?></h4>
+								<h4 class="list-group-item-heading cursor-default">Reparar <?=$tipo?></h4>
 							</a>
 						<?php
 						$current_cat = null;
@@ -39,8 +39,9 @@ $id_marca=$_POST['id'];
 						while($row_mod=recibir_array($res_mod)){
 						  	$nombre_modelo=utf8_encode($row_mod['nombre']);
 						  	$id_modelo=$row_mod['id_modelo'];
+						  	$nombre=limpia_espacios($nombre_modelo);
 						  	?>
-								<a href="#" class="list-group-item enlace-2" data-marca="<?=$id_marca?>">
+								<a href="tarifas_reparacion.php?id=<?=$id_modelo?>&modelo=<?=$nombre?>" class="list-group-item enlace-2" data-marca="<?=$id_marca?>">
 									<h4 class="list-group-item-heading"><?=$nombre_modelo?></h4>
 								</a>
 							<?php
@@ -56,37 +57,19 @@ $id_marca=$_POST['id'];
 		<article class="content col-sm-12">
 			<hr>
 			<div class="btns text-center">
-				<button type="button" class="btn btn-primary btn-lg btn-return">Volver al listado de marcas</button>
+				<a href="tarifas.php" type="button" class="btn btn-primary btn-lg btn-return">Volver al listado de marcas</a>
 			</div>
 		</article>
 	</div>
 </div>
+<?php
+function limpia_espacios($cadena){
+	$cadena = str_replace(' ', '', $cadena);
+	return $cadena;
+}
+?>
 <script>
 $(document).ready(function(){
 	$('.contenidor-2').animate({width: 'toggle'});
-	$('.btn-return').on('click', function(){
-		$('.contenidor-2').fadeToggle('slow', 'linear');
-		$.ajax({
-			url: 'layout/marcas.php',
-			data: {id : 0},
-			type: 'POST',
-			success : function(data) {
-				$('.wrapper-1').html(data);
-		    },
-		});
-	});
-	$('.enlace-2').on('click', function(){
-		id_marca=$(this).attr('data-marca');
-		//alert(id_marca);
-		$('.contenidor-1').animate({width: 'toggle'});
-		$.ajax({
-			url: 'layout/reparaciones.php',
-			data: {id : id_marca},
-			type: 'POST',
-			success : function(data) {
-				$('.wrapper-1').html(data);
-		    },
-		});
-	});
 });
 </script>

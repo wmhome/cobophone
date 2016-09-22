@@ -5,8 +5,7 @@ ob_start();
 
 
 $link=conecta();
-
-
+$nombre_modelo=$_GET['modelo'];
 ?>
 <!doctype html>
 <html>
@@ -68,8 +67,9 @@ $link=conecta();
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.html">Home</a> </li>
-      <li class="active">Tarifas reparaciones</li>
+      <li><a href="index.php">Home</a> </li>
+      <li><a href="tarifas.php">Tarifas reparaciones</a></li>
+      <li class="active"><?=$nombre_modelo?></li>
     </ul>	
   </div>
 </div><!-- .breadcrumb-box -->
@@ -77,11 +77,11 @@ $link=conecta();
 <section id="main">
   <header class="page-header">
     <div class="container">
-      <h1 class="title">Tarifas</h1>
+      <h1 class="title">Tarifas reparación <?=$nombre_modelo?></h1>
     </div>	
   </header>
   <div class="wrapper-1">
-  <?php include("layout/marcas.php"); ?>
+  <?php include("layout/reparaciones.php"); ?>
   </div>
   <div class="wrapper-2">
   	<div class="row">
@@ -164,19 +164,5 @@ $link=conecta();
 <script src="js/jplayer/jplayer.playlist.min.js"></script>
 <script src="js/jquery.scrollbar.min.js"></script>
 <script src="js/main.js"></script>
-
-
-<script src="libs/js/hovereffect/jquery.hoverdir.js"></script>
-<script src="libs/js/hovereffect/modernizr.custom.97074.js"></script>
-<script>
-$(function() {
-	$(' #da-thumbs > div ').each( function() { $(this).hoverdir(); } );
-});
-$(document).ready(function(){
-	if($('.contenedor-1').css('display', 'none')){
-		$('.contenidor-1').fadeToggle('slow','linear');
-	}
-});
-</script>
 </body>
 </html>

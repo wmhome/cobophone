@@ -151,9 +151,9 @@
 					<div class="big-icon bg" data-appear-animation="wobble"><i class="fa fa-truck"></i></div>
 					<h4 class="title" data-appear-animation="bounceInLeft">Servicio a domicilio</h4>
 					<div class="text-small" data-appear-animation="bounceInLeft">
-						The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. It is a long established fact that a reader.
+						Si no te puedes pasar por nuestra tienda te lo recogemos en tu propia casa y te lo entregamos reparado donde nos digas servicio a toda España.
 						<div class="clearfix"></div><br>
-						<button class="btn btn-primary">Leer más</button>
+						<a href="about-us.php" class="btn btn-primary">Leer más</a>
 					</div>
 				</div>
 			</div><!-- .services-box-two -->
@@ -163,9 +163,9 @@
 					<div class="big-icon bg" data-appear-animation="wobble"><i class="fa fa-users"></i></div>
 					<h4 class="title" data-appear-animation="bounceInUp">Equipo experimentado</h4>
 					<div class="text-small" data-appear-animation="bounceInUp">
-						The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. It is a long established fact that a reader.
+						Somos un equipo de técnicos de microelectrónica venidos de los principales países donde fabrican los terminales.
 						<div class="clearfix"></div><br>
-						<button class="btn btn-primary">Leer más</button>
+						<a href="about-us.php" class="btn btn-primary">Leer más</a>
 					</div>
 				</div>
 			</div><!-- .services-box-two -->
@@ -175,9 +175,9 @@
 					<div class="big-icon bg" data-appear-animation="wobble"><i class="fa fa-file-code-o"></i></div>
 					<h4 class="title" data-appear-animation="bounceInRight">Presupuesto sin compromiso</h4>
 					<div class="text-small" data-appear-animation="bounceInRight">
-						The readable content of a page when looking at its layout. The point of using. Duis aute irure dolor reprehenderit in voluptate velit esse cillum.
+						Te enviamos un presupuesto estimado de la reparación, tan sólo debes de rellenar los datos que te pedimos en el formulario y uno de nuestros técnicos te responderá.
 						<div class="clearfix"></div><br>
-						<button class="btn btn-primary">Leer más</button>
+						<a href="presupuesto.php" class="btn btn-primary">Leer más</a>
 					</div>
 				</div>
 			</div><!-- .services-box-two -->

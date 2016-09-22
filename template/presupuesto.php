@@ -1,13 +1,3 @@
-<?php
-include("libs/php/funcions.php");
-session_start();
-ob_start();
-
-
-$link=conecta();
-
-
-?>
 <!doctype html>
 <html>
 <head>
@@ -69,7 +59,7 @@ $link=conecta();
   <div class="container">
     <ul class="breadcrumb">
       <li><a href="index.html">Home</a> </li>
-      <li class="active">Tarifas reparaciones</li>
+      <li class="active">Formulario urgente de presupuesto estimado</li>
     </ul>	
   </div>
 </div><!-- .breadcrumb-box -->
@@ -77,22 +67,61 @@ $link=conecta();
 <section id="main">
   <header class="page-header">
     <div class="container">
-      <h1 class="title">Tarifas</h1>
+      <h1 class="title">Formulario urgente de presupuesto estimado</h1>
     </div>	
   </header>
-  <div class="wrapper-1">
-  <?php include("layout/marcas.php"); ?>
-  </div>
-  <div class="wrapper-2">
-  	<div class="row">
-  		<div class="col-xs-12 centered text-center">
-  			<hr>
-  			<a href="tel://+34916422257" class="btn btn-primary"><span class="fa fa-phone"></span> Llámanos</a>
-  			<a href="whatsapp://send?tel:+34631188349" class="btn btn-primary visible-xs"><span class="fa fa-whatsapp"></span> WhatsApp</a>
-  			<a href="presupuesto.php" class="btn btn-success">Pide tu presupuesto</a>
-  		</div>
-  	</div>
-  </div>
+  <div class="container">
+    <div class="row">
+      <article class="content col-sm-12 col-md-12">
+		<h2>Te enviamos un presupuesto estimado para la reparacion de tu dispositivo.</h2>
+		<p>Detalla el problema que tienes. Cuanta más información nos proporciones, mejor así uno de nuestros técnicos estudiara tu caso y así te podrá enviar un presupuesto personalizado. Queremos conocer como se encuentra tu dispositivo antes de que nos llegue a nuestras instalaciones y de este modo tener todo el equipo y laboratorio preparado para su intervención.</p>
+		<p>Te responderemos lo antes posible. Y recuerda que te puedes pasar por nuestra tienda en Fuenlabrada o nuestra empresa de transporte te lo pasa a recoger.</p>
+		
+		<div class="clearfix"></div>
+		
+		<form class="form form-horizontal" enctype="multipart/form-data" method="post" action="">
+			<div class="form-group">
+				<label class="label-control">Nombre y apellidos</label>
+				<input class="form-control" type="text" placeholder="Escriba su nombre">
+			</div>
+			<div class="form-group">
+				<label class="label-control">e-mail</label>
+				<input class="form-control" type="email" placeholder="Escriba su correo electrónico">
+			</div>
+			<div class="form-group">
+				<label class="label-control">Número de teléfono para contactar</label>
+				<input class="form-control" type="tel" placeholder="Escriba su número de teléfono">
+			</div>
+			<div class="form-group">
+				<label class="label-control">Código Postal (si quieres recogida y entrega del dispositivo)</label>
+				<input class="form-control" type="text" placeholder="Escriba su código postal">
+			</div>
+			<div class="form-group">
+				<label class="label-control">Dinos que quieres reparar:</label>
+				<select class="form-control">
+					<option value="0" selected="selected">Escoge una opción</option>
+					<option value="telefono">Teléfono</option>
+					<option value="tablet">Tablet</option>
+					<option value="ordenador">Ordenador</option>
+					<option value="consola">Consola</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Explicanos que problema tienes</label>
+				<textarea cols="5" rows="8" class="form-control" placeholder="Explicanos tu problema"></textarea>
+			</div>
+			<div class="form-group">
+				<label class="label-control">¿Cuanto es 2 + 2?</label>
+				<input class="form-control" type="text" placeholder="Escriba su nombre">
+			</div>
+			<div class="form-group action">
+				<button class="btn btn-primary">Envía</button>
+			</div>
+		</form>
+		<div class="clearfix"></div>
+      </article><!-- .content -->
+    </div>
+  </div><!-- .container -->
 </section><!-- #main -->
 
 </div><!-- .page-box-content -->
@@ -165,18 +194,5 @@ $link=conecta();
 <script src="js/jquery.scrollbar.min.js"></script>
 <script src="js/main.js"></script>
 
-
-<script src="libs/js/hovereffect/jquery.hoverdir.js"></script>
-<script src="libs/js/hovereffect/modernizr.custom.97074.js"></script>
-<script>
-$(function() {
-	$(' #da-thumbs > div ').each( function() { $(this).hoverdir(); } );
-});
-$(document).ready(function(){
-	if($('.contenedor-1').css('display', 'none')){
-		$('.contenidor-1').fadeToggle('slow','linear');
-	}
-});
-</script>
 </body>
 </html>

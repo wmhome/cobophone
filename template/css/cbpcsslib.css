@@ -13797,6 +13797,7 @@ section.galeria div {
 section.galeria div img {
   width: 100%;
   height: auto;
+  margin: 0 auto;
 }
 
 /*Media Queries*/
@@ -13831,13 +13832,15 @@ section.galeria div img {
 
 .da-thumbs div a {
   overflow: hidden;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .da-thumbs div a div {
   position: absolute;
   background: #333;
   background: rgba(3, 122, 197, 0.7);
-  width: 100%;
+  width: 300px;
   height: 100%;
   text-align: center;
 }
@@ -13860,7 +13863,7 @@ section.galeria div img {
 }
 .da-thumbs div a div span.inf p.num {
   font-family: "Arimo";
-  font-size: 60px;
+  font-size: 30px;
   color: #FFFFFF;
   letter-spacing: 1.66px;
   line-height: 120px;
