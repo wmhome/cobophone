@@ -73,7 +73,7 @@
 			</svg>
 		  </div>
           <strong class="title">Llámanos:</strong> <a href="tel://+34916422257">+34 916 422 257</a> <br>
-          <strong>WhatsApp</strong> <a href="whatsapp://send?tel:+34631188349">+34 631 188 349</a>
+         	<span class="fa fa-whatsapp fa-footer-icon"></span><strong> WhatsApp</strong> <a href="whatsapp://send?tel:+34631188349">+34 631 188 349</a>
         </div>
 		
         <div class="address col-xs-6 col-sm-3 col-md-3">

@@ -25,7 +25,7 @@
 			  </div><!-- .search-header
 			  
 			  --><div class="phone-header">
-				<a href="#">
+				<a href="tel://+34916422257">
 				  <svg x="0" y="0" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
 					<path d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
 					c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
@@ -66,13 +66,13 @@
 					  </ul>
 					</li>
 					<li class="">
-					  <a href="under-construction.php">Tienda<span class="item-new">New</span></a>
+					  <a href="under-construction.php">Tienda<!--<span class="item-new">New</span>--></a>
 					</li>
 					<li class="">
-					  <a href="tarifas.php">Tarifas</a>
+					  <a href="tarifas-construccion.php">Tarifas</a>
 					</li>
 					<li class="">
-					  <a href="blog-list.php" target="_blank">Blog</a>
+					  <a href="under-construction.php">Blog</a>
 					</li>
 					<li class="">
 					  <a href="contact.php">Contacto</a>

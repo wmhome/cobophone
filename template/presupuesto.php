@@ -8,7 +8,7 @@
   <meta name="author" content="WhiteMind.es">
   <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <?php include ("layout/metas.html");?>
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico">
   
@@ -79,26 +79,26 @@
 		
 		<div class="clearfix"></div>
 		
-		<form class="form form-horizontal" enctype="multipart/form-data" method="post" action="">
+		<form class="form form-horizontal" enctype="multipart/form-data" method="post" action="php/phpmailer/mail.php">
 			<div class="form-group">
 				<label class="label-control">Nombre y apellidos</label>
-				<input class="form-control" type="text" placeholder="Escriba su nombre">
+				<input class="form-control" name="nombre" type="text" placeholder="Escriba su nombre" required>
 			</div>
 			<div class="form-group">
 				<label class="label-control">e-mail</label>
-				<input class="form-control" type="email" placeholder="Escriba su correo electrónico">
+				<input class="form-control" type="email" name="email" placeholder="Escriba su correo electrónico" required>
 			</div>
 			<div class="form-group">
 				<label class="label-control">Número de teléfono para contactar</label>
-				<input class="form-control" type="tel" placeholder="Escriba su número de teléfono">
+				<input class="form-control" type="tel" name="tel" placeholder="Escriba su número de teléfono" required>
 			</div>
 			<div class="form-group">
 				<label class="label-control">Código Postal (si quieres recogida y entrega del dispositivo)</label>
-				<input class="form-control" type="text" placeholder="Escriba su código postal">
+				<input class="form-control" type="text" name="cp" placeholder="Escriba su código postal" required>
 			</div>
 			<div class="form-group">
 				<label class="label-control">Dinos que quieres reparar:</label>
-				<select class="form-control">
+				<select class="form-control" name="tipo" required>
 					<option value="0" selected="selected">Escoge una opción</option>
 					<option value="telefono">Teléfono</option>
 					<option value="tablet">Tablet</option>
@@ -108,11 +108,11 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label">Explicanos que problema tienes</label>
-				<textarea cols="5" rows="8" class="form-control" placeholder="Explicanos tu problema"></textarea>
+				<textarea cols="5" rows="8" class="form-control" name="mensaje" placeholder="Explicanos tu problema" required></textarea>
 			</div>
 			<div class="form-group">
 				<label class="label-control">¿Cuanto es 2 + 2?</label>
-				<input class="form-control" type="text" placeholder="Escriba su nombre">
+				<input class="form-control" type="text" name="antibot" placeholder="Escriba el resultado" required>
 			</div>
 			<div class="form-group action">
 				<button class="btn btn-primary">Envía</button>
@@ -193,6 +193,6 @@
 <script src="js/jplayer/jplayer.playlist.min.js"></script>
 <script src="js/jquery.scrollbar.min.js"></script>
 <script src="js/main.js"></script>
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
 </body>
 </html>

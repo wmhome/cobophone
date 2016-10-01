@@ -40,7 +40,7 @@ $link=conecta();
   <link rel="stylesheet" href="css/ladda.min.css">
   <link rel="stylesheet" href="css/datepicker.css">
   <link rel="stylesheet" href="css/jquery.scrollbar.css">
-  
+  <?php include ("layout/metas.html");?>
   <!-- Theme CSS -->
   <link rel="stylesheet" href="css/cbpcsslib.css">
   
@@ -84,14 +84,12 @@ $link=conecta();
   <?php include("layout/marcas.php"); ?>
   </div>
   <div class="wrapper-2">
-  	<div class="row">
-  		<div class="col-xs-12 centered text-center">
-  			<hr>
-  			<a href="tel://+34916422257" class="btn btn-primary"><span class="fa fa-phone"></span> Llámanos</a>
-  			<a href="whatsapp://send?tel:+34631188349" class="btn btn-primary visible-xs"><span class="fa fa-whatsapp"></span> WhatsApp</a>
-  			<a href="presupuesto.php" class="btn btn-success">Pide tu presupuesto</a>
-  		</div>
-  	</div>
+      <div class="col-xs-12 centered text-center">
+          <hr>
+          <a href="tel://+34916422257" class="btn btn-primary"><span class="fa fa-phone"></span> Llámanos</a>
+          <a href="whatsapp://send?tel:+34631188349" class="btn btn-primary visible-xs"><span class="fa fa-whatsapp"></span> WhatsApp</a>
+          <a href="presupuesto.php" class="btn btn-success">Pide tu presupuesto</a>
+      </div>
   </div>
 </section><!-- #main -->
 

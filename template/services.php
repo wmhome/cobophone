@@ -8,7 +8,7 @@
   <meta name="author" content="WhiteMind.es">
   <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+	<?php include ("layout/metas.html");?>
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico">
   
@@ -75,7 +75,7 @@
 	<div class="container">
 	  <div class="row bottom-padding-mini">
 		<div class="big-services-box col-sm-4 col-md-4">
-		  <a href="#">
+		  <a href="contact.php#transporte">
 			<div class="big-icon border border-info">
 			  <span class="livicon" data-n="home" data-s="62" data-c="#0098ca" data-hc="#0098ca">
 			</div>
@@ -85,7 +85,7 @@
 		</div><!-- .services-box-two -->
 		
 		<div class="big-services-box col-sm-4 col-md-4">
-		  <a href="#">
+		  <a href="presupuesto.php">
 			<div class="big-icon border border-info">
 			  <span class="livicon" data-n="calculator" data-s="62" data-c="#0098ca" data-hc="#0098ca">
 			</div>
@@ -95,7 +95,7 @@
 		</div><!-- .services-box-two -->
 		
 		<div class="big-services-box col-sm-4 col-md-4">
-		  <a href="#">
+		  <a href="about-us.php">
 			<div class="big-icon border border-info">
 			  <span class="livicon" data-n="users" data-s="62" data-c="#0098ca" data-hc="#0098ca">
 			</div>
@@ -120,7 +120,7 @@
 	  
 		<div class="row services white">
 		  <div class="service col-sm-4 col-md-4" data-appear-animation="bounceInLeft">
-			<a href="#">
+			<a href="under-construction.php">
 			  <div class="icon border">
 				<div class="livicon" data-n="shopping-cart" data-s="42" data-c="#fff" data-hc="0"></div>
 			  </div>
@@ -130,7 +130,7 @@
 		  </div>
 		  
 		  <div class="service col-sm-4 col-md-4" data-appear-animation="bounceInDown">
-			<a href="#">
+			  <a href="tel://+34916422257">
 			  <div class="icon border">
 				<div class="livicon" data-n="phone" data-s="42" data-c="#fff" data-hc="0"></div>
 			  </div>
@@ -140,7 +140,7 @@
 		  </div>
 		  
 		  <div class="service col-sm-4 col-md-4" data-appear-animation="bounceInRight">
-			<a href="#">
+			<a href="contact.php#transporte">
 			  <div class="icon border">
 				<div class="livicon" data-n="truck" data-s="42" data-c="#fff" data-hc="0" data-d="1600"></div>
 			  </div>
@@ -164,13 +164,13 @@
 	  <div class="row">
 		<div class="col-sm-6 bottom-padding">
 		  <p class="text-center"><img class="replace-2x img-rounded" src="content/img/services/office-1.jpg" width="370" height="185" alt=""></p>
-		  <h5><a href="#" class="no-border">Aquí tienes los precios de las reparaciones</a></h5>
+		  <h5><a href="tarifas-construccion.php" class="no-border">Aquí tienes los precios de las reparaciones</a></h5>
 		  <p>Todos nuestros técnicos son profesionales especializados. Ellos pueden reparar teléfonos móviles de las principales marcas: Samsung, Apple, LG, Huawei, Sony, Alcatel, Blackberry, Nokia, HTC...</p>
 		</div>
 		
 		<div class="col-sm-6 bottom-padding">
 		  <p class="text-center"><img class="replace-2x img-rounded" src="content/img/services/office-2.png" width="192" height="185" alt=""></p>
-		  <h5><a href="#" class="no-border">Formulario urgente de un presupuesto estimado.</a></h5>
+		  <h5><a href="presupuesto.php" class="no-border">Formulario urgente de un presupuesto estimado.</a></h5>
 		  <p>Te enviamos un presupuesto estimado de la reparación del móvil que quieres reparar. Tan sólo debes de rellenar los datos que te pedimos en el formulario y uno de nuestros técnicos te responderá.</p>
 		</div>
 	  </div>

@@ -8,6 +8,7 @@
   <meta name="author" content="WhiteMind.es">
   <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<?php include ("layout/metas.html");?>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico">
@@ -153,7 +154,7 @@
 					<div class="text-small" data-appear-animation="bounceInLeft">
 						Si no te puedes pasar por nuestra tienda te lo recogemos en tu propia casa y te lo entregamos reparado donde nos digas servicio a toda España.
 						<div class="clearfix"></div><br>
-						<a href="about-us.php" class="btn btn-primary">Leer más</a>
+						<a href="contact.php#transporte" class="btn btn-primary">Leer más</a>
 					</div>
 				</div>
 			</div><!-- .services-box-two -->
@@ -185,9 +186,9 @@
 		<br><br>
 	</div>
 	<!-- /Servicios section -->
-	<?php include("test-01.php"); ?>
+
 	<!-- /Tienda home section --> 
-	<!-- Blog home section -->
+	<!-- Blog home section
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
