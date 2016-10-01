@@ -1,0 +1,65 @@
+# robots.txt
+
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /js/
+
+User-agent: googlebot-image
+Disallow: /admin/
+
+User-agent: googlebot-mobile
+Disallow: /admin/
+
+User-agent: MSNBot
+Disallow: /admin/
+
+User-agent: Slurp
+Disallow: /admin/
+
+User-agent: Teoma
+Disallow: /admin/
+
+User-agent: twiceler
+Disallow: /admin/
+
+User-agent: Gigabot
+Disallow: /admin/
+
+User-agent: Scrubby
+Disallow: /admin/
+
+User-agent: Robozilla
+Disallow: /admin/
+
+User-agent: Nutch
+Disallow: /admin/
+
+User-agent: ia_archiver
+Disallow: /admin/
+
+User-agent: baiduspider
+Disallow: /admin/
+
+User-agent: naverbot
+Disallow: /admin/
+
+User-agent: yeti
+Disallow: /admin/
+
+User-agent: yahoo-mmcrawler
+Disallow: /admin/
+
+User-agent: psbot
+Disallow: /admin/
+
+User-agent: asterias
+Disallow: /admin/
+
+User-agent: yahoo-blogs/v3.9
+Disallow: /admin/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /admin/dashboard.php
+
+Sitemap: http://www.cobophone.es/admin/
