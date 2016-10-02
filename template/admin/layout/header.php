@@ -5,12 +5,12 @@ $rol=$_SESSION['tipo'];
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a type="button" class="navbar-toggle c-button" id="c-button--push-right">
+      <button type="button" class="navbar-toggle c-button" id="c-button--push-right">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
-      <a class="navbar-brand" href="#">WMAdmin</a>
+      </button>
+      <a class="navbar-brand" href="dashboard.php" style="padding: 5px 15px;"><img src="assets/img/cerbell.png" style="height: 40px;" class="img-responsive"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,8 +23,7 @@ $rol=$_SESSION['tipo'];
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Secciones web <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-          	<li><a href="homeweb.php">Portada web (imágenes)</a></li>
-            <li><a href="frase_index.php">Frase incio</a></li>
+          	<li><a href="404.html">Portada web (imágenes)</a></li>
             <li><a href="tarifas.php">Tarifas</a></li>
           </ul>
         </li>
@@ -37,7 +36,7 @@ $rol=$_SESSION['tipo'];
         }
         if($rol=="superuser" || $rol=="administrador"){
         ?>
-        <li><a href="clientes.php">Clientes</a></li>
+        <li><a href="404.html">Clientes</a></li>
         <?php
         }
         if($rol=="superuser" || $rol=="administrador"){
@@ -45,16 +44,16 @@ $rol=$_SESSION['tipo'];
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="familias.php">Familias</a></li>
-            <li><a href="productos.php">Productos</a></li>
+            <li><a href="404.html">Familias</a></li>
+            <li><a href="404.html">Productos</a></li>
           </ul>
         </li>
-        <li><a href="blog.php">Blog</a></li>
+        <li><a href="404.html">Blog</a></li>
         <?php
         }
         if($rol=="superuser" || $rol=="comercial"){
         ?>
-        <li><a href="ventas.php">Ventas</a></li>
+        <li><a href="404.html">Ventas</a></li>
         <?php
         }
         ?>
@@ -65,8 +64,8 @@ $rol=$_SESSION['tipo'];
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?=$_SESSION['usuarioa']?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="profile.php?id=<?=$_SESSION['id_usuarioa']?>">Profile</a></li>
-            <li><a href="calendar.php">Calendar</a></li>
-            <li><a href="index.php"><i class="fa fa-sign-out"></i> Log Out</a></li>
+            <li><a href="404.html">Calendar</a></li>
+            <li><a href="index.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
           </ul>
         </li>
       </ul>

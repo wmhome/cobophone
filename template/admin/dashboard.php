@@ -29,7 +29,7 @@ $link=conecta();
     <![endif]-->
   </head>
   <body>
-  	<div id="page">
+
 	  	<div class="page-wrap o-wrapper" id="wrapper">
 			<header>
 				<?php include("layout/header.php");?>
@@ -50,29 +50,23 @@ $link=conecta();
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="panel-body">
-							<p>
-								<button id="c-button--slide-left" class="c-button">Slide Left</button>
-								<button id="c-button--push-left" class="c-button">Push Left</button>
-							</p>
-							<p>Slide and push menus that are initially hidden off screen, and transition into view with CSS transitions.</p>
+
 						</div>
 					</div>
 		  			</div>
 		  		</div>
 		  	</div>
 	  	</div>
-	  	
-	  	<!-- Side nav for responsive views -->
-	    <div class="sb-slidebar sb-right sb-style-overlay sb-width-wide plm prm pbm mt52">
-	      <?php include("layout/side-navs.html");?>
-	    </div>
-	    <!-- Side nav -->
 	  	<footer class="site-footer">
 	  		<div class="container">
 	  			<p class="text-muted text-center mtl">&copy; WhiteMind - <a href="http://www.whitemind.es" target="_blank">www.whitemind.es</a> - <a href="http://www.wmhome.es" target="_blank">www.wmhome.es</a></p>
 	  		</div>
 	  	</footer>
-  	</div>
+		<!-- Side nav for responsive views -->
+		<div class="sb-slidebar sb-right sb-style-overlay sb-width-wide plm prm pbm mt52">
+			<?php include("layout/side-navs.html");?>
+		</div>
+		<!-- Side nav -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

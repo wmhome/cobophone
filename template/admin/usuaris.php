@@ -31,11 +31,10 @@ $link=conecta();
     <![endif]-->
 </head>
 <body>
-<div id="page">
-    <header>
-        <?php include("layout/header.php");?>
-    </header>
     <div class="page-wrap o-wrapper" id="wrapper">
+        <header>
+            <?php include("layout/header.php");?>
+        </header>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -64,18 +63,18 @@ $link=conecta();
                                 while($row0=recibir_array($res0)){
                                     $estado=$row0['estado'];
                                     $nombre=htmlentities($row0['nombre']);
-                                    if($estado=="activado"){
+                                    if($estado==1){
                                         $text_color="text-success";
                                         $action='<a href="#" class="deactivate text-danger" data-toggle="modal" data-target="#deactivate" rel="tooltip" data-original-title="Desactivar" data-user-id="'.$row0['id_user'].'" data-user-name="'.$nombre.'"><i class="ico glyphicon glyphicon-ban-circle"></i></a>';
                                     }
-                                    else if($estado=="desactivado"){
+                                    else if($estado==0){
                                     $text_color="text-danger";
                                     $action='<a href="#" class="activate text-success" data-toggle="modal" data-target="#activate" rel="tooltip" data-original-title="Activar"  data-user-id="'.$row0['id_user'].'" data-user-name="'.$nombre.'"><i class="ico glyphicon glyphicon-ok"></i></a>';
                                     }
 
                                     ?>
                                     <tr>
-                                        <td><?php echo $row0['id_user'];?></td>
+                                        <td><?php echo $row0['id_usuario'];?></td>
                                         <td><?php echo $nombre;?></td>
                                         <td><?php echo utf8_encode($row0['apellidos']);?></td>
                                         <td><?php echo $row0['fecha_ini'];?></td>
@@ -97,107 +96,23 @@ $link=conecta();
             </div>
         </div>
     </div>
-
-    <!-- Side nav for responsive views -->
-    <div class="sb-slidebar sb-right sb-style-overlay sb-width-wide plm prm pbm mt52">
-        <?php include("layout/side-navs.html");?>
-    </div>
-    <!-- Side nav -->
     <footer class="site-footer">
         <div class="container">
             <p class="text-muted text-center mtl">&copy; WhiteMind - <a href="http://www.whitemind.es" target="_blank">www.whitemind.es</a> - <a href="http://www.wmhome.es" target="_blank">www.wmhome.es</a></p>
         </div>
     </footer>
+
+<!-- Side nav for responsive views -->
+<div class="sb-slidebar sb-right sb-style-overlay sb-width-wide plm prm pbm mt52">
+    <?php include("layout/side-navs.html");?>
 </div>
+<!-- Side nav -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="libs/js/bootstrap.min.js"></script>
 <script src="libs/js/components/slidemenu/menu.js"></script>
 <script src="libs/js/components/slidemenu/side-navs.js"></script>
-<!-- Scripts for datatables -->
-<script src="libs/js/components/datatable/datatable.js"></script>
-<script src="libs/js/components/chosen/chosen.jquery.min.js"></script>
-<script>
-    (function($) {
-        $(document).ready(function() {
-            $.slidebars({
-                scrollLock: true // true or false
-            });
-            $("[rel=tooltip]").tooltip({ placement: 'right'});
 
-            var table = $('#table1').DataTable({
-                "sPaginationType": "full_numbers"
-            });
-            //Sergi
-            $('.deleteuser').click(function(){
-                var username = $(this).attr('data-user-name');
-                var userid = $(this).attr('data-user-id');
-                $('.username').html(username);
-                $('.userid').html(userid);
-                $('.delete-user').attr('data-user-id', userid);
-            });
-            $('.activate, .deactivate').click(function(){
-                var username = $(this).attr('data-user-name');
-                var userid = $(this).attr('data-user-id');
-                $('.username').html(username);
-                $('.userid').html(userid);
-                $('.activate-user, .deactivate-user').attr('data-user-id', userid);
-            });
-            $('.activate-user').click(function(){
-                var userid = $(this).attr('data-user-id');
-                $.ajax({
-                    type: "POST",
-                    url: "libs/php/activ_deactiv.php",
-                    data: { id: userid, tipo: "activado", taula: "users" }
-                })
-                        .done(function( msg ) {
-                            $('#activate').delay(2000).modal('hide');
-                            $('#activate').on('hidden.bs.modal', function (e) {
-                                location.reload();
-                                $('.alert-success').show('slow');
-                            });
-                        });
-            });
-            $('.deactivate-user').click(function(){
-                var userid = $(this).attr('data-user-id');
-                $.ajax({
-                    type: "POST",
-                    url: "libs/php/activ_deactiv.php",
-                    data: { id: userid, tipo: "desactivado", taula: "users" }
-                })
-                        .done(function( msg ) {
-                            $('#deactivate').delay(2000).modal('hide');
-                            $('#deactivate').on('hidden.bs.modal', function (e) {
-                                location.reload();
-                                $('.alert-success').show('slow');
-                            });
-                        });
-            });
-            $('.delete-user').click(function(){
-                var userid = $(this).attr('data-user-id');
-                $.ajax({
-                    type: "POST",
-                    url: "libs/php/delete.php",
-                    data: { id: userid, taula: "users" }
-                })
-                        .done(function( msg ) {
-                            $('#myModal').delay(2000).modal('hide');
-                            $('#myModal').on('hidden.bs.modal', function (e) {
-                                location.reload();
-
-                            });
-                        });
-                $('.alert-success').show('slow');
-            });
-            // Chosen Select
-            $("select[name|='table1_length']").chosen({
-                'min-width': '100px',
-                'white-space': 'nowrap',
-                disable_search_threshold: 10
-            });
-        });
-    }) (jQuery);
-</script>
 </body>
 </html>

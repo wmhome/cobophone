@@ -10672,11 +10672,6 @@ body.has-active-menu {
 }
 
 html, body {
-  min-height: 100%;
-  display: initial;
-}
-
-#page {
   height: 100%;
 }
 
@@ -10696,7 +10691,13 @@ html, body {
 }
 
 .site-footer {
-  background-color: #f1f1f1;
+  background: #f0f0f0;
+  display: table;
+  width: 100%;
+}
+.site-footer .container {
+  vertical-align: middle;
+  display: table-cell;
 }
 
 /*# sourceMappingURL=wmhcsslib.css.map */
