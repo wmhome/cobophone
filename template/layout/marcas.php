@@ -5,6 +5,9 @@
 			<?php
 	      	$sql="select * from marcas where estado=1";
 	      	$res=busqueda($sql, $link);
+	      	echo $sql;
+	      	if($res) echo "OK";
+	      	else echo "KO";
 	      	while($row=recibir_array($res)){
 		      	$nombre=utf8_encode($row['nombre']);
 		      	$id_file=$row['id_file'];

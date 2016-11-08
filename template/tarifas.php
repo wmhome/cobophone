@@ -3,10 +3,7 @@ include("libs/php/funcions.php");
 session_start();
 ob_start();
 
-
 $link=conecta();
-
-
 ?>
 <!doctype html>
 <html>
@@ -99,6 +96,7 @@ $link=conecta();
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+<?php include("layout/cookies.php"); ?>
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->

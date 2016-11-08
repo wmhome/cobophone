@@ -58,7 +58,7 @@
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.php">Inicio</a> </li>
+      <li><a href="index_test_1.php">Inicio</a> </li>
       <li class="active">CoboPhone Blog</li>
     </ul>	
   </div>
@@ -235,6 +235,7 @@
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+<?php include("layout/cookies.php"); ?>
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->

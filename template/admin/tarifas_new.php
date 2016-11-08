@@ -39,48 +39,68 @@ $link=conecta();
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header">
-                    <h1>Tarifas <small>añadir nueva reparación</small><a href="tarifas_new.php" class="btn btn-info pull-right mtm"><span class="fa fa-plus"></span> Añadir tarifa</a></h1>
+                    <h1>Tarifas <small>añadir nueva reparación</small></h1>
                 </div>
                 <div class="col-sm-12">
-                    <form class="form-horizontal" enctype="multipart/form-data" method="post" action="">
+                    <form class="form-horizontal" enctype="multipart/form-data" method="post" action="tarifas_add.php">
                         <div class="form-group">
-                            <label class="control-label">Escoge una marca</label>
-                            <select class="form-control marca" name="marca" id="marca">
-                                <option value="0">Escoge una opción</option>
-                                <?php
-                                $sql_m="select * from marcas order by id_marca asc";
-                                $res_m=busqueda($sql_m, $link);
-                                while($row_m=recibir_array($res_m)){
-                                    $id_marca=$row_m['id_marca'];
-                                    $nombre_marca=utf8_encode($row_m['nombre']);
-                                ?>
-                                        <option value="<?=$id_marca?>"><?=$nombre_marca?></option>
-                                        <?php
-                                }
-                                ?>
-                            </select>
+                            <label for="fechai" class="col-sm-2 control-label">Fecha creación</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly="readonly" class="form-control" name="fechai" id="fechai" placeholder="Fecha" value="<?php echo date('d/m/Y H:s');?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Escoge una marca</label>
+                            <div class="col-sm-10">
+                                <select class="form-control marca" name="marca" id="marca">
+                                    <option value="0">Escoge una opción</option>
+                                    <?php
+                                    $sql_m="select * from marcas order by id_marca asc";
+                                    $res_m=busqueda($sql_m, $link);
+                                    while($row_m=recibir_array($res_m)){
+                                        $id_marca=$row_m['id_marca'];
+                                        $nombre_marca=utf8_encode($row_m['nombre']);
+                                    ?>
+                                            <option value="<?=$id_marca?>"><?=$nombre_marca?></option>
+                                            <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group r_marca">
-                            <label class="control-label">Reparación general marca</label>
-                            <input type="checkbox" name="r_marca" id="r_marca">
+                            <label class="col-sm-2 control-label">Reparación general marca</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" name="r_marca" id="r_marca">
+                            </div>
                         </div>
                         <div class="form-group r_modelo">
-                            <label class="control-label">Escoge un modelo</label>
-                            <select class="form-control modelo" name="modelo" id="modelo">
-                                <option value="0">Escoge una opción</option>
-                            </select>
+                            <label class="col-sm-2 control-label">Escoge un modelo</label>
+                            <div class="col-sm-10">
+                                <select class="form-control modelo" name="modelo" id="modelo">
+                                    <option value="0">Escoge una opción</option>
+                                </select>
+                            </div>
                         </div>
                         <!-- -->
                         <div class="form-group">
-                            <label class="control-label">Nombre de la raparación</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Escribe el nombre de la reparación">
+                            <label class="col-sm-2 control-label">Nombre de la raparación</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Escribe el nombre de la reparación">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Precio</label>
-                            <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio de la reparación">
+                            <label class="col-sm-2 control-label">Precio</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio de la reparación">
+                                <p class="text-muted">Precio 0€ indicará que se tiene que consultar con tienda.</p>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit" name="enviar" id="enviar">Enviar</button>
+                            <div class="col-sm-12 text-right">
+                                <button class="btn btn-primary" type="submit" name="enviar" id="enviar">Enviar</button>
+                                <a href="tarifas.php" class="btn btn-default" type="submit" name="enviar" id="enviar">Volver al listado de tarifas</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -123,7 +143,7 @@ $link=conecta();
             });
         });
         $(".r_marca").change(function (){
-            alert("canvi");
+            alert("La reparación pasara a ser general de la marca.");
             $(".r_modelo").toggle('slow');
         });
     });

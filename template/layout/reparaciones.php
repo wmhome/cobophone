@@ -15,13 +15,14 @@ $id_modelo=$_GET['id'];
 		$row_mod=recibir_array($res_mod);
 		$id_marca=$row_mod['id_marca'];
 		$nombre_modelo=utf8_encode($row_mod['nombre']);
+
 		$id_file=$row_mod['id_file'];
 		$sql_file="select * from files where id='$id_file'";
 		$res_file=busqueda($sql_file, $link);
 		$row_file=recibir_array($res_file);
 		$url=$row_file['url'];
 		$name_file=$row_file['name'];
-		$image=$url.$name_file;
+		$image='admin/'.$url.$name_file;
 		?>
 		<article class="content col-sm-12">
 			<h3 class="text-center"><?=$nombre_modelo?></h3>
@@ -48,10 +49,15 @@ $id_modelo=$_GET['id'];
 			$sql_2="select * from reparacion where id_marca='$id_marca'";
 			$res_2=busqueda($sql_2, $link);
 			while($row_2=recibir_array($res_2)){
+			$precio=$row_2['precio'];
+			if($precio == 0){
+				$precio="<a href='contact.php' class='btn btn-link btn-inTable'>Consultar</a>";
+			}
+			else $precio=$precio."€";
 			?>
 			<tr>
 				<td class="text-left"><?=utf8_encode($row_2['nombre'])?></td>
-				<td><?=$row_2['precio']." €";?></td>
+				<td><?=$precio?></td>
 			</tr>
 			<?php
 			}

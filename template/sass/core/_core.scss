@@ -1,9 +1,14 @@
 //new buttons
 @import "buttons.scss";
+//more icons
+@import "icons.scss";
+
+@import "lists.scss";
 
 //Main
 @import "main.scss";
-@import "cookies.scss";
+//@import "cookies.scss";
+@import "helpers";
 //Pages
 @import "tarifas.scss";
 

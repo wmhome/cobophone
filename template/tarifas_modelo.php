@@ -67,7 +67,7 @@ $nombre_marca=$_GET['marca'];
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.php">Home</a> </li>
+      <li><a href="index_test_1.php">Home</a> </li>
       <li><a href="tarifas.php">Tarifas reparaciones</a></li>
       <li class="active"><?=$nombre_marca?></li>
     </ul>	
@@ -99,6 +99,7 @@ $nombre_marca=$_GET['marca'];
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+<?php include("layout/cookies.php"); ?>
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->

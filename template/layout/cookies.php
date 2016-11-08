@@ -1,10 +1,9 @@
-<!--Código HTML de la política de cookies -->
-<div id="overbox3">
-    <div id="infobox3" class="col-xs-12">
-        <p>Esta web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando consideramos que aceptas su uso.
-        <a href="politica_cookies.php">Más información</a>
-        <a onclick="aceptar_cookies();" style="cursor:pointer; text-decoration: none;" class="btn btn-primary">Aceptar</a><a class="btn btn-secondary" onclick="popbox3();"><span class="fa fa-close"></span></a></p>
+<!--//BLOQUE COOKIES-->
+<div id="barraaceptacion" style="display: block;">
+    <div class="inner">
+        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
+        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+        <a href="javascript:void(0);" class="ok" onclick="PonerCookie();"><b>OK</b></a> |
+        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
     </div>
 </div>
-
-<!-- Fin del código de cookies -->

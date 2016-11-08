@@ -65,15 +65,19 @@
 						<li><a href="reparacion_consolas">Reparación Consolas</a></li>
 					  </ul>
 					</li>
+					  <!--
 					<li class="">
-					  <a href="under-construction.php">Tienda<!--<span class="item-new">New</span>--></a>
+					  <a href="under-construction.php">Tienda<!--<span class="item-new">New</span></a>
 					</li>
+					  -->
 					<li class="">
-					  <a href="tarifas-construccion.php">Tarifas</a>
+					  <a href="tarifas.php">Tarifas</a>
 					</li>
+					  <!--
 					<li class="">
 					  <a href="under-construction.php">Blog</a>
 					</li>
+					-->
 					<li class="">
 					  <a href="contact.php">Contacto</a>
 					</li>

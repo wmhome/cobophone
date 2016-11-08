@@ -79,7 +79,7 @@
 		
 		<div class="clearfix"></div>
 		
-		<form class="form form-horizontal" enctype="multipart/form-data" method="post" action="php/phpmailer/mail.php">
+		<form class="form" enctype="multipart/form-data" method="post" action="php/phpmailer/mail.php">
 			<div class="form-group">
 				<label class="label-control">Nombre y apellidos</label>
 				<input class="form-control" name="nombre" type="text" placeholder="Escriba su nombre" required>
@@ -130,6 +130,7 @@
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+<?php include("layout/cookies.php"); ?>
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->

@@ -35,7 +35,7 @@ $link=conecta();
 	  	<div class="ccontent">
 	  		<div class="bradcrumb breadcrumbv1">
 	  			<ol class="breadcrumb">
-				  <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+				  <li><a href="../index_test_1.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li class="active">Carrito de la compra</li>
 				</ol>
 				<h1 class="lead">Carrito</h1>

@@ -15,6 +15,7 @@ $pass=$_POST['password'];
 		if($row['tipo']=="superuser" || $row['tipo']=="administrador"){
 			$_SESSION['usuarioa']=$row['nombre']." ".$row['apellidos'];
 			$_SESSION['tipo']="superuser";
+			$_SESSION['id_usuarioa']=$row['id_usuario'];
 			echo "Usuari registrat: ".$_SESSION['usuario']."<br />";
 			echo "<a href='dashboard.php?user=$_SESSION[usuario]'>Continuar</a>";
 			?><script>document.location.href="../../dashboard.php";</script><?php

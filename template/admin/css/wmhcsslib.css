@@ -10643,28 +10643,123 @@ body.has-active-menu {
 .btn:hover, .btn:focus, .btn:active {
   outline: 0;
 }
-.btn .btn-default {
+.btn.btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.btn.btn-info:hover, .btn.btn-info:active {
+  background-color: #31b0d5;
+  border-color: #5bc0de;
+}
+.btn.btn-default {
   background-color: transparent;
   border-color: #333333;
   color: #333333;
 }
-.btn .btn-default:hover, .btn .btn-default:focus, .btn .btn-default:active {
+.btn.btn-default:hover, .btn.btn-default:active {
   background-color: #f1f1f1;
   border-color: #cccccc;
-  color: #ffffff;
+  color: #777777;
 }
-.btn .btn-primary {
+.btn.btn-primary {
   background-color: #752033;
   border-color: #752033;
   color: #ffffff;
 }
-.btn .btn-primary:hover, .btn .btn-primary:focus, .btn .btn-primary:active {
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
   background-color: lighter(#752033, 10%);
   border-color: lighter(#752033, 10%);
+}
+.btn.btn-icon {
+  border: 0;
+  background-color: transparent;
+}
+.btn.btn-icon span {
+  font-size: 18px;
+}
+.btn.btn-icon span:before {
+  color: #c3325f;
+}
+.btn.btn-icon span:hover {
+  color: #323a3d;
+}
+.btn.btn-mini {
+  padding: 7px;
+  font-size: 12px;
 }
 
 .panel .panel-default {
   border-radius: 0;
+}
+
+/** Helpers File **/
+/** Center clases **/
+.centered {
+  margin: 0 auto;
+  float: none;
+}
+
+/** Margins **/
+.man {
+  margin: 0 0 0 0 !important;
+}
+
+.mtn {
+  margin-top: 0 !important;
+}
+
+.mts {
+  margin-top: 7px !important;
+}
+
+.mtm {
+  margin-top: 15px !important;
+}
+
+.mtl {
+  margin-top: 30px !important;
+}
+
+.mtxl {
+  margin-top: 60px !important;
+}
+
+/** Paddings **/
+.pan {
+  padding: 0 0 0 0 !important;
+}
+
+.ptn {
+  padding-top: 0 !important;
+}
+
+.prn {
+  padding-right: 0 !important;
+}
+
+.pbn {
+  padding-bottom: 0 !important;
+}
+
+.pln {
+  padding-left: 0 !important;
+}
+
+/** Disabled clases **/
+a.disabled,
+button.disabled,
+.btn.disabled {
+  cursor: no-drop;
+}
+a.disabled:hover, a.disabled:focus, a.disabled:active,
+button.disabled:hover,
+button.disabled:focus,
+button.disabled:active,
+.btn.disabled:hover,
+.btn.disabled:focus,
+.btn.disabled:active {
+  background-color: transparent;
 }
 
 * {

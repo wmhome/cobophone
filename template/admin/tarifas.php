@@ -36,6 +36,24 @@ $link=conecta();
         <?php include("layout/header.php");?>
     </header>
     <div class="container">
+        <?php
+  		if($_GET['mod']=='ok' || $_GET['insert']=='ok'){
+  		?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span class="fa fa-check"></span> La consulta se ha realizado con éxito.
+        </div>
+        <?php
+  		}
+  		else if($_GET['mod']=='no' || $_GET['insert']=='no'){
+  		?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span class="fa fa-exclamation"></span> Ha ocurrido algún problema, vuela a intentarlo en unos minutos.
+        </div>
+        <?php
+  		}
+  		?>
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header">
@@ -43,6 +61,17 @@ $link=conecta();
                 </div>
                 <?php
                     $sql0="select * from marcas where estado=1";
+                    if($_GET['id_marca']){
+                        $id_marca_default=$_GET['id_marca'];
+                        $sql00="select nombre from marcas where id_marca='$id_marca_default'";
+                        $res00=busqueda($sql00, $link);
+                        $row00=recibir_array($res00);
+                        $nombre_marca_default=utf8_encode($row00[0]);
+                        $sql0="select * from marcas where estado=1 and id_marca!='$id_marca_default'";
+                    }
+                    else{
+                        $nombre_marca_default="Escoge una opción";
+                    }
                     $res0=busqueda($sql0, $link);
                 ?>
                 <div class="row">
@@ -50,7 +79,7 @@ $link=conecta();
                     <div class="form-group">
                         <label class="control-label">Escoge una marca</label>
                         <select class="form-control marca">
-                            <option value="0" selected>Escoge una opción</option>
+                            <option value="<?=$id_marca_default?>" selected><?=$nombre_marca_default?></option>
                             <?php
                             while($row0=recibir_array($res0)){
                             $id_marca=$row0['id_marca'];
@@ -67,7 +96,33 @@ $link=conecta();
                     <div class="form-group">
                         <label class="control-label">Escoge un modelo</label>
                         <select class="form-control modelo">
-                            <option value="0" selected>Escoge una opción</option>
+                            <?php
+                             if($_GET['id_modelo']!=0){
+                                $id_modelo_default=$_GET['id_modelo'];
+                                $sql_mod_default="select nombre from modelos where id_modelo='$id_modelo_default'";
+                                $res_mod_default=busqueda($sql_mod_default, $link);
+                                $row_mod_default=recibir_array($res_mod_default);
+                                $nombre_modelo_default=utf8_encode($row_mod_default['nombre']);
+                                $sql_mod="select * from modelos where id_modelo!='$id_modelo'";
+                                $res_mod=busqueda($sql_mod, $link);
+                                $class_mod="clas";
+                              }
+                              if($_GET['id_modelo']==0){
+                                $nombre_modelo_default="Escoge una opción";
+                                $sql_mod="select * from modelos where id_marca='$id_marca_default'";
+                                echo $sql_mod;
+                                $res_mod=busqueda($sql_mod, $link);
+                              }
+                              if(!$_GET['id_modelo']) $nombre_modelo_default="Escoge una opción";
+                              ?>
+                            <option value="<?=$id_modelo_default?>" selected><?=$nombre_modelo_default?></option>
+                                <?php
+                                while($row_mod=recibir_array($res_mod)){
+                                ?>
+                                <option value="<?=$row_mod['id_modelo']?>"><?=utf8_encode($row_mod['nombre'])?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
@@ -85,7 +140,34 @@ $link=conecta();
                         </tr>
                         </thead>
                         <tbody class="reparaciones">
-
+                            <?php
+                            //TODO
+                            if($_GET['id_modelo']!=0){
+                                $sql="select * from reparacion where id_modelo='$id_modelo_default' or id_marca='$id_marca_default'";
+	                            $res=busqueda($sql,$link);
+                                while($row=recibir_array($res)){
+                                    $id=$row['id_reparacion'];
+                                    $data=utf8_encode($row['nombre']);
+                                    $precio=$row['precio'];
+                                    $idestado=$row['estado'];
+                                    if($idestado==1) $estado='Activado';
+                                    if($idestado==0) $estado='Desactivado';
+                                    echo '<tr><td>'.$id.'</td><td>'.$data.'</td><td>'.$fecha_ini.'</td><td>'.$precio.'</td><td>'.$estado.'</td>';
+                                    if($estado=="Activado"){
+                                        $text_color="text-success";
+                                        $action='<a href="#" class="deactivate text-danger" data-toggle="modal" data-target="#deactivate" rel="tooltip" data-original-title="Desactivar" data-user-id="'.$id.'" data-user-name="'.$data.'"><i class="ico glyphicon glyphicon-ban-circle"></i></a>';
+                                    }
+                                    else if($estado=="Desactivado"){
+                                        $text_color="text-danger";
+                                        $action='<a href="#" class="activate text-success" data-toggle="modal" data-target="#activate" rel="tooltip" data-original-title="Activar"  data-user-id="'.$id.'" data-user-name="'.$data.'"><i class="ico glyphicon glyphicon-ok"></i></a>';
+                                    }
+                                    echo '<td>
+                                        <a href="reparacion_edit.php?id='.$id.'" rel="tooltip" data-original-title="Editar" class="mrs"><i class="ico glyphicon glyphicon-edit"></i></a>
+                                        <a href="#" class="deleteuser mrs" data-toggle="modal" data-target="#myModal" rel="tooltip" data-original-title="Eliminar" data-user-id="'.$id.'" data-user-name="'.$data.'"><i class="ico glyphicon glyphicon-trash"></i></a>
+                                        '.$action.'</td></tr>';
+                                }
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -104,6 +186,96 @@ $link=conecta();
     <?php include("layout/side-navs.html");?>
 </div>
 <!-- Side nav -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Eliminar producto</h4>
+            </div>
+            <div class="modal-body">
+                ¿Seguro que quieres eliminar el producto: <strong class="username"></strong>, con la id: <strong class="userid"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
+                <button type="button" class="btn btn-danger delete-user"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="activate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Activar producto</h4>
+            </div>
+            <div class="modal-body">
+                ¿Deaseas activar el producto: <strong class="username"></strong>, con la id: <strong class="userid"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
+                <button type="button" class="btn btn-success activate-user"><i class="glyphicon glyphicon-ok"></i> Activar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deactivate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Desactivar producto</h4>
+            </div>
+            <div class="modal-body">
+                ¿Deaseas desactivar el producto: <strong class="username"></strong>, con la id: <strong class="userid"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
+                <button type="button" class="btn btn-danger deactivate-user"><i class="glyphicon glyphicon-ban-circle"></i> Desactivar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="destacar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="destacarLabel">Destacar producto</h4>
+            </div>
+            <div class="modal-body">
+                ¿Deaseas destacar el producto: <strong class="username"></strong>, con la id: <strong class="userid"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
+                <button type="button" class="btn btn-success des-prod"><i class="glyphicon glyphicon-ok"></i> Activar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="nodestacar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="nodestacarLabel">No destacar producto</h4>
+            </div>
+            <div class="modal-body">
+                ¿Deaseas dejar de destacar el producto: <strong class="username"></strong>, con la id: <strong class="userid"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
+                <button type="button" class="btn btn-danger nodes-prod"><i class="glyphicon glyphicon-ban-circle"></i> Desactivar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

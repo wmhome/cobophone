@@ -1,10 +1,38 @@
 //Custom buttons
+a{
+	color: $primary;
+	svg{
+		path{
+			fill: $primary !important;
+		}
+	}
+	&.up{
+		&:hover {
+			background-color: $primary !important;
+		}
+	}
+	&.close{
+		&:hover{
+			color: $primary-hover !important;
+		}
+	}
+}
+button span.icon-bar{
+	background-color: $primary !important;
+}
 .btn{
 	transition: all 0.3s ease-in;
 	-webkit-transition: all 0.3s ease-in;
 	-moz-transition: all 0.3s ease-in;
 	-o-transition: all 0.3s ease-in;
 	-ms-transition: all 0.3s ease-in;
+	&.btn-link{
+		color: $primary;
+	}
+	&.btn-primary{
+		background-color: $primary;
+		border-color: $primary;
+	}
 	&.btn-default{
 		&.btn-home-shop{
 			background-color: #ffffff;
@@ -31,5 +59,16 @@
 				color: #ffffff;
 			}
 		}	
+	}
+	&.btn-inTable{
+		line-height: 0;
+	}
+}
+//Special
+.slider{
+	&.rs-slider{
+		.tparrows{
+			background-color: $primary !important;
+		}
 	}
 }

@@ -58,7 +58,7 @@
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.php">Inicio</a> </li>
+      <li><a href="index_test_1.php">Inicio</a> </li>
       <li class="active">Contacto</li>
     </ul>	
   </div>
@@ -110,7 +110,7 @@ Recuerda que también dispones de otros medios para comunicarte o contactar con 
 			  <textarea class="form-control" name="comment"></textarea>
 			  <div class="clearfix"></div>
 			  <div class="buttons-box clearfix">
-				<button id="submit" class="btn btn-default">Enviar</button>
+				<button id="submit" class="btn btn-primary">Enviar</button>
 				<span class="required"><b>*</b> Campo obligatorio</span>
 			  </div><!-- .buttons-box -->
 			</form>
@@ -228,6 +228,7 @@ Recuerda que también dispones de otros medios para comunicarte o contactar con 
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+<?php include("layout/cookies.php"); ?>
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->

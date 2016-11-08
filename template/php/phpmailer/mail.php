@@ -6,7 +6,7 @@
 
 require "includes/class.phpmailer.php";
 	
-$correu="info@mo-el.es";
+$correu="karimana@hotmail.es";
 
 $nombre=utf8_decode($_POST['nombre']);
 //$apellidos=utf8_decode($_POST['apellidos']);
@@ -77,7 +77,7 @@ if ($exito){
 	if($antibot==4){
 		$enlace=$_SERVER["HTTP_REFERER"];
 		?><script type="text/javascript"> alert("Mail enviado correctamente") </script><?
-		?><script type="text/javascript">document.location.href="../../index.php";</script><?
+		?><script type="text/javascript">document.location.href="../../index_test_1.php";</script><?
 	}
 }
 //}

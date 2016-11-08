@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>CoboPhone \ Reparación Moviles, Tablets, Ordenadores Y Consolas</title>
   <meta name="keywords" content="CoboPhone">
-  <meta name="description" content="CoboPhone \ Reparación Moviles, Tablets, Ordenadores Y Consolas">
+  <meta name="description" content="CoboPhone, cobophone, reparacion moviles en Madrid, reparacion tablets en Madrid, reparacion ordenadoresen Madrid, reparacion consolas en Madrid">
   <meta name="author" content="WhiteMind.es">
   <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,7 @@
   
   <!-- Theme CSS -->
   <link rel="stylesheet" href="css/cbpcsslib.css">
+    <link href="cookies.css" rel="stylesheet" type="text/css">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/customizer/pages.css">
@@ -54,16 +55,15 @@
 <header class="header header-two">
   <?php include("layout/header.php"); ?>
 </header><!-- .header -->
-
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.html">Home</a> </li>
+      <li><a href="index.php">Home</a> </li>
       <li class="active">Quienes somos</li>
     </ul>	
   </div>
 </div><!-- .breadcrumb-box -->
-
+	<?php include ("layout/banner.html"); ?>
 <section id="main">
 	<header class="page-header">
 		<div class="container">
@@ -118,6 +118,7 @@
 <footer id="footer">
   <?php include("layout/footer.php"); ?>
 </footer>
+
 <div class="clearfix"></div>
 
 <!--[if (!IE)|(gt IE 8)]><!-->
@@ -181,6 +182,7 @@
 <script src="js/jplayer/jplayer.playlist.min.js"></script>
 <script src="js/jquery.scrollbar.min.js"></script>
 <script src="js/main.js"></script>
+<script src="libs/js/scripts.js"></script>
 
 </body>
 </html>

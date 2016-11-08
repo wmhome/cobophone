@@ -50,7 +50,7 @@ $total=$total_compra + $gastos_envio;
 	  	<div class="ccontent">
 	  		<div class="bradcrumb breadcrumbv1">
 	  			<ol class="breadcrumb">
-				  <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+				  <li><a href="../index_test_1.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li><a href="carrito.php">Carrito</a></li>
 				  <li class="active"><?php echo $breadcrumb;?></li>
 				</ol>
@@ -524,7 +524,7 @@ $total=$total_compra + $gastos_envio;
 
 								$res=busqueda($ssql,$link);
 								$_SESSION['carrito']->confirmar();
-								?><script>document.location.href="../index.php?venta=ok";</script><?php
+								?><script>document.location.href="../index_test_1.php";</script><?php
 							}
 						}				
 						?>

@@ -5,8 +5,8 @@ $cobophone_user='dbo647078095';
 $cobophone_pass='.Mimosa1130';
 $cobophone_db='db647078095';
 function conecta(){
-	$link=mysql_connect($cobophone_alojamiento, $cobophone_user, $cobophone_pass);
-	mysql_select_db($cobophone_db, $link);
+	$link=mysql_connect('db647078095.db.1and1.com', 'dbo647078095', '.Mimosa1130');
+	mysql_select_db('db647078095', $link);
 	return $link;	
 }
 function busqueda($sql, $link){

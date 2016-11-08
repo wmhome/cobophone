@@ -58,36 +58,36 @@
 <div class="breadcrumb-box">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.php">Inicio</a> </li>
+      <li><a href="index_test_1.php">Inicio</a> </li>
       <li class="active">Servicios</li>
     </ul>	
   </div>
 </div><!-- .breadcrumb-box -->
-
+	<?php include ("layout/banner.html"); ?>
 <section id="main">
   <header class="page-header">
     <div class="container">
       <h1 class="title">Servicios</h1>
     </div>	
   </header>
-  
+
   <article class="content">
 	<div class="container">
 	  <div class="row bottom-padding-mini">
 		<div class="big-services-box col-sm-4 col-md-4">
 		  <a href="contact.php#transporte">
 			<div class="big-icon border border-info">
-			  <span class="livicon" data-n="home" data-s="62" data-c="#0098ca" data-hc="#0098ca">
+			  <span class="livicon" data-n="home" data-s="62" data-c="#8A0072" data-hc="#8A0072">
 			</div>
-			<h4 class="title">Servicio a domicilio</h4>
-			<div class="text-small">Cobophone te ofrece la posibilidad de repara tu móvil, ordenador, tablet y consola sin moverte de casa.</div>
+			<h4 class="title">Servicio reparación express</h4>
+			<div class="text-small">Reparación en tienda en 1 hora, pero si no puedes venir te lo recogemos donde nos digas.</div>
 		  </a>
 		</div><!-- .services-box-two -->
 		
 		<div class="big-services-box col-sm-4 col-md-4">
 		  <a href="presupuesto.php">
 			<div class="big-icon border border-info">
-			  <span class="livicon" data-n="calculator" data-s="62" data-c="#0098ca" data-hc="#0098ca">
+			  <span class="livicon" data-n="calculator" data-s="62" data-c="#8A0072" data-hc="#8A0072">
 			</div>
 			<h4 class="title">Presupuesto sin compromiso</h4>
 			<div class="text-small">Te enviamos un presupuesto estimado de la reparación del móvil que quieres reparar. <a href="#">Rellena este formulario.</a></div>
@@ -97,7 +97,7 @@
 		<div class="big-services-box col-sm-4 col-md-4">
 		  <a href="about-us.php">
 			<div class="big-icon border border-info">
-			  <span class="livicon" data-n="users" data-s="62" data-c="#0098ca" data-hc="#0098ca">
+			  <span class="livicon" data-n="users" data-s="62" data-c="#8A0072" data-hc="#8A0072">
 			</div>
 			<h4 class="title">Equipo experimentado</h4>
 			<div class="text-small">Somos un equipo de técnicos de microelectrónica venidos de los principales países donde fabrican los terminales.</div>
@@ -164,7 +164,7 @@
 	  <div class="row">
 		<div class="col-sm-6 bottom-padding">
 		  <p class="text-center"><img class="replace-2x img-rounded" src="content/img/services/office-1.jpg" width="370" height="185" alt=""></p>
-		  <h5><a href="tarifas-construccion.php" class="no-border">Aquí tienes los precios de las reparaciones</a></h5>
+		  <h5><a href="tarifas.php" class="no-border">Aquí tienes los precios de las reparaciones</a></h5>
 		  <p>Todos nuestros técnicos son profesionales especializados. Ellos pueden reparar teléfonos móviles de las principales marcas: Samsung, Apple, LG, Huawei, Sony, Alcatel, Blackberry, Nokia, HTC...</p>
 		</div>
 		
@@ -256,6 +256,6 @@
 <script src="js/jplayer/jplayer.playlist.min.js"></script>
 <script src="js/jquery.scrollbar.min.js"></script>
 <script src="js/main.js"></script>
-
+<script src="libs/js/scripts.js"></script>
 </body>
 </html>
